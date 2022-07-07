@@ -43,7 +43,7 @@ class NewsFeedFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.fetchNewsFeed()   // Fetch news when screen is resumed
+                viewModel.fetchNewsFeed()   // Fetch news when screen is started
                 launch {
                     viewModel.newsFlow.collectLatest {
                         newsFeedAdapter.submitList(it)
