@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/NewsFeedFragment">
+
+    <fragment
+        android:id="@+id/NewsFeedFragment"
+        android:name="com.gabin.newsreader.ui.feed.NewsFeedFragment"
+        tools:layout="@layout/fragment_news_feed">
+
+        <action
+            android:id="@+id/action_NewsFeed_to_ArticleDetails"
+            app:destination="@+id/NewsArticleDetailsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/NewsArticleDetailsFragment"
+        android:name="com.gabin.newsreader.ui.details.NewsArticleDetailsFragment"
+        tools:layout="@layout/fragment_article_details">
+
+        <argument
+            android:name="newsItem"
+            app:argType="com.gabin.newsreader.data.models.NewsItem" />
+
+    </fragment>
+</navigation>
